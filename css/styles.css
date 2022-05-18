@@ -27,6 +27,9 @@ body {
   letter-spacing: 0.03em;
   margin: 0;
 }
+textarea {
+  resize: none;
+}
 .header {
   border-bottom: 1px solid #ececec;
 }
@@ -244,12 +247,19 @@ header .list {
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 .hero .button:hover,
-.hero .button:focus {
+.hero .button:focus,
+.modal-form .button:hover,
+.modal-form .button:focus,
+footer .button:hover,
+footer .button:focus {
   background-color: var(--accent-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
 }
-.hero .button {
+.hero .button,
+.modal-form .button,
+footer .button {
+  display: flex;
   cursor: pointer;
   font-weight: 700;
   font-size: 16px;
@@ -262,6 +272,8 @@ header .list {
   transition-property: background-color, box-shadow, border-radius;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  margin-left: auto;
+  margin-right: auto;
 }
 .activity {
   position: relative;
@@ -615,7 +627,7 @@ span.secondary {
 .foot-section {
   display: inline-flex;
 }
-.foot-section div:last-child {
+.foot-section div + div {
   margin-left: 70px;
   padding-top: 12px;
 }
@@ -708,6 +720,7 @@ span.secondary {
   transform: translate(-50%, -50%);
   width: 528px;
   height: 581px;
+  padding: 40px 39px 40px 41px;
   background-color: var(--main-background-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -728,4 +741,47 @@ span.secondary {
 .modal-button:focus,
 .modal-button:active {
   cursor: pointer;
+}
+.modal-form div + div {
+  margin-top: 10px;
+}
+.modal-form div:first-child {
+  margin-top: 12px;
+}
+.modal-form .policy {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.modal h2 {
+  font-weight: 700;
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+}
+.modal-form .area {
+  margin-top: 4px;
+  width: 100%;
+  height: 40px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+}
+.footer-form {
+  display: flex;
+}
+.footer-form button {
+  margin-left: 12px;
+}
+.footer-form .area {
+  width: 358px;
+}
+.telegram-icon {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 10px;
+  fill: var(--main-background-color);
+}
+.modal-form label {
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--secondary-text-color);
 }
