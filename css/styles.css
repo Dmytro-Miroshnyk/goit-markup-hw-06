@@ -742,13 +742,14 @@ span.secondary {
 .modal-button:active {
   cursor: pointer;
 }
-.modal-form div + div {
+.modal-form .form-item {
   margin-top: 10px;
 }
-.modal-form div:first-child {
+.modal-form .form-item:first-child {
   margin-top: 12px;
 }
 .modal-form .policy {
+  display: flex;
   margin-top: 20px;
   margin-bottom: 30px;
 }
@@ -766,12 +767,14 @@ span.secondary {
   height: 40px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+  padding-left: 42px;
 }
 .modal-svg {
   position: absolute;
   left: 15px;
   top: 50%;
   transform: translateY(-50%);
+  fill: rgba(33, 33, 33, 1);
 }
 .modal-form .area::placeholder {
   font-weight: 400;
@@ -805,6 +808,8 @@ span.secondary {
   fill: var(--main-background-color);
 }
 .modal-form label {
+  display: block;
+  margin-bottom: 4px;
   font-weight: 400;
   font-size: 12px;
   color: var(--secondary-text-color);
@@ -813,4 +818,9 @@ span.secondary {
   position: relative;
   margin: 0;
   padding: 0;
+}
+.area:focus ~ .modal-svg,
+.area:focus {
+  fill: var(--accent-color);
+  border-color: var(--accent-color);
 }
